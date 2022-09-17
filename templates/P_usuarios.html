@@ -1,0 +1,100 @@
+<HTML>
+  <head>
+    <LINK REL="SHORTCUT ICON" HREF="{{url_for("static", filename='images/Ic.png')}}"></head>
+      <title>Software inventario ARTEKTON</title>
+      <body>
+      <form action="/verificar" method="post"></form>
+      <body style="background-color: rgb(17, 17, 17) ; color: #efefef ; ">
+      <h1>INFO USUARIO</h1>
+        <style type="text/css">
+        table {
+        border: 2px solid #000;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 12px;
+        background-color: rgba(0, 0, 0, 0.733);
+        box-shadow: 0px 0px 20px rgb(85, 85, 85) inset, 0px 0px 25px rgb(255, 255, 255);
+        }           
+        th, td {
+        border: 5px solid rgba(153, 153, 153, 0);
+        }
+        body {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url("static/images/Fondo2editado.png");
+        background-color: #cccccc;
+        }
+        #navegador ul{
+        list-style-type: none;
+        }
+        #navegador li{
+        border-radius: 12px;
+        display: inline-block;
+        margin: 0 0px 0 0;
+        }
+
+        #navegador li a {
+        border-radius: 12px;
+        margin: -10px 0px -15px -40;
+        display: inline-block;
+        padding: 5px 15px 5px 15px;
+        color: white;
+        background-color: rgb(228, 86, 3);
+        border: 1px solid black;
+        text-decoration: none;
+        font-family: 'Franklin Gothic Medium';
+        }
+        #navegador li a:hover{
+        display: inline-block;
+        background-color: rgb(211, 211, 211);
+        color: rgb(0, 0, 0);
+        box-shadow: 0px 0px 20px rgb(0, 0, 0) inset, 0px 0px 25px rgb(255, 255, 255)
+        }
+        </style>            
+<table>
+      <tr>
+      <th><font face=arial><p style="color:rgb(250, 250, 250); font-size:40px">Información del Usuario</p></th>
+      </tr>
+      <tr>
+      <th><font face=arial><p style="color:rgb(250, 250, 250); font-size:30px">USUARIO</th></p>
+      <td><font face=arial><p style="color:rgb(250, 250, 250); font-size:25px">{{session['name']}}</p></td>
+      </tr>
+      <tr>
+      <th><font face=arial><p style="color:rgb(250, 250, 250); font-size:30px">CARGO</th></p>
+      <td><font face=arial><p style="color:rgb(250, 250, 250); font-size:25px">{{session['cargo']}}</p></td>
+      </tr>
+      <tr>
+      <th><font face=arial><p style="color:rgb(250, 250, 250); font-size:30px">CEDULA</th></p>
+      <td><font face=arial><p style="color:rgb(250, 250, 250); font-size:25px">{{session['cedula']}}</p></td>
+      <tr>
+      <th><font face=arial><p style="color:rgb(250, 250, 250); font-size:30px">NUMERO ID</th></p>
+      <td><font face=arial><p style="color:rgb(250, 250, 250); font-size:25px">{{session['id_registro']}}</p></td>
+      </tr>
+      </table>
+      <div id="navegador">
+      <br>
+      <table align="center" without="border">
+      <tr>
+      <th>
+        <li><ul>
+        <a button class="btn btn-default boton-adaptado2" type="button" href="logout">Cerrar sesión
+        </a></li></ul></button>  </p></th>
+        <th><li><ul>
+        <a button class="btn btn-default boton-adaptado2" type="button" href="admin">Administrar usuarios
+        </a></li></ul></button>
+        </th>
+        <th>
+          <li><ul>
+          <a button class="btn btn-default boton-adaptado32" type="button" href="Inventario">Inventario
+          <span class="glyphicon glyphicon-step-backward"></span> 
+        </th></p></tr>
+      </table><br><br><br><br>
+
+    </body>
+  </head>
+</HTML>
+
+
+      

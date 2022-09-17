@@ -1,0 +1,110 @@
+<HTML>
+    <head>
+      <LINK REL="SHORTCUT ICON" HREF="{{url_for("static", filename='images/Ic.png')}}"></head>
+        <title>Software inventario ARTEKTON</title>
+        <body>
+        <form action="/verificar" method="post"></form>
+        <body style="background-color: rgb(17, 17, 17) ; color: #efefef ; ">
+        <h1>INFO USUARIO</h1>
+          <style type="text/css">
+          table {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            background-color: rgba(0, 0, 0, 0.733);
+            box-shadow: 0px 0px 20px rgb(85, 85, 85) inset, 0px 0px 25px rgb(255, 255, 255);
+            }           
+            th, td {
+            border: 5px solid rgba(153, 153, 153, 0);
+            border-radius: 12px;
+            text-align: center;
+            }
+            body {
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-image: url("static/images/Fondo2editado.png");
+            background-color: #cccccc;
+            }
+            #navegador ul{
+              border-radius: 12px;
+            list-style-type: none;
+            }
+            #navegador li{
+              border-radius: 12px;
+            display: inline-block;
+            margin: 0 0px 0 0;
+            }
+
+            #navegador li a {
+              border-radius: 12px;
+            margin: 0 0px 0px 0;
+            display: inline-block;
+            padding: 5px 10px 5px 15px;
+            color: white;
+            background-color: rgb(228, 86, 3);
+            border: 1px solid black;
+            text-decoration: none;
+            font-family: 'Franklin Gothic Medium';
+            }
+            #navegador li a:hover{
+              border-radius: 12px;
+            display: inline-block;
+            background-color: rgb(211, 211, 211);
+            color: rgb(0, 0, 0);
+            box-shadow: 0px 0px 20px rgb(0, 0, 0) inset, 0px 0px 25px rgb(255, 255, 255)
+            }
+            .alert {
+              border-radius: 12px;
+            padding: 7px 45px 7px 45px;  
+            font-weight: 700;
+            font-size: 13pt; 
+            }
+            input{
+            border-radius: 12px;
+            background: linear-gradient(top, #f9f9f9, #e3e3e3);
+            border: 1px solid #999;
+            border-radius: 3px;
+            outline: none;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 10pt;
+            font-family: 'Arial';
+            }
+          </style>
+          <table align="left" >
+            <tr>
+              <th><div id="navegador">
+                <li> <a href="auxiliar"> Atras
+              </a></li> 
+            </th>
+            <th colspan="2" style="text-align:center;">
+              <font face=HighTowerText style="color:rgb(250, 250, 250); font-size:15px"> Usuario:&nbsp;{{session['name']}}&nbsp;
+          </th>
+              <th><div id="navegador">
+              <li> <a href="logout">Cerrar sesion
+              </a></li> 
+              </th></tr>
+          </table><br><br><br><br><br><br>              
+  <table>
+        <tr>
+        <th><font face=HighTowerText style="color:rgb(250, 250, 250); font-size:40px">ACCESO RESTRINGIDO PARA USUARIOS: ADMIN o Jefe de Inventario</th>
+        </tr>
+        
+        </table>
+        <div id="navegador">
+        <br>
+        <table align="center" without="border">
+        <tr>
+          <th>
+            <li>
+            <a button class="btn btn-default boton-adaptado32" type="button" href="Inventarioauxiliar">Inventario
+
+          </th></tr>
+        </table>
+  
+      </body>
+    </head>
+  </HTML>

@@ -1,0 +1,120 @@
+<HTML>
+    <head>
+        <LINK REL="SHORTCUT ICON" HREF="{{url_for("static", filename='images/Ic.png')}}"></head>
+        <title>Software inventario ARTEKTON</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for("static", filename='css/bootstrap.min.css')}}"></link>
+        <script src="static/js/bootstrap.min.js"></script>
+        <body>
+        <style type="text/css">
+            table {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 12px;
+            background-color: rgba(0, 0, 0, 0.733);
+            box-shadow: 0px 0px 20px rgb(85, 85, 85) inset, 0px 0px 25px rgb(255, 255, 255);
+            }           
+            th, td {
+            border: 5px solid rgba(153, 153, 153, 0);
+            border-radius: 12px;
+            text-align: center;
+            }
+            body {
+            background: #1a2a6c;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+            #navegador ul{
+              border-radius: 12px;
+            list-style-type: none;
+            }
+            #navegador li{
+              border-radius: 12px;
+            display: inline-block;
+            margin: 0 0px 0 0;
+            }
+
+            #navegador li a {
+              border-radius: 12px;
+            margin: 0 0px 0px 0;
+            display: inline-block;
+            padding: 5px 10px 5px 15px;
+            color: white;
+            background-color: rgb(228, 86, 3);
+            border: 1px solid black;
+            text-decoration: none;
+            font-family: 'Franklin Gothic Medium';
+            }
+            #navegador li a:hover{
+              border-radius: 12px;
+            display: inline-block;
+            background-color: rgb(211, 211, 211);
+            color: rgb(0, 0, 0);
+            box-shadow: 0px 0px 20px rgb(0, 0, 0) inset, 0px 0px 25px rgb(255, 255, 255)
+            }
+            .alert {
+              border-radius: 12px;
+            padding: 7px 45px 7px 45px;  
+            font-weight: 700;
+            font-size: 13pt; 
+            }
+            input{
+            border-radius: 12px;
+            background: linear-gradient(top, #f9f9f9, #e3e3e3);
+            border: 1px solid #999;
+            border-radius: 3px;
+            outline: none;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 10pt;
+            font-family: 'Arial';
+            }
+          </style>
+<body style="background-color: rgb(17, 17, 17) ; color: #efefef ; ">
+<form action="/actualizar/{{registro.0}}" method="POST">
+    
+        <h1>EDITAR INVENTARIO</h1>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          {% for message in messages %}
+          {{ message}}
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <br><br><br>
+        <table align="center">
+          <tr>
+            <th>               
+            <font face=arial style="color:rgb(250, 250, 250); font-size:15px">Nombre de material:
+            <input type="text" style="background-color:rgb(228, 86, 3); color: white;" name="nombre_material" value="{{registro.2}}">
+            </th>
+            <th>
+              <font face=arial style="color:rgb(250, 250, 250); font-size:15px">Fecha:
+              <input type="text" style="background-color:rgb(228, 86, 3); color: white;" name="fecha" value="{{registro.3}}">
+              </th>
+            <th>
+              <font face=arial style="color:rgb(250, 250, 250); font-size:15px">Descripción:
+                <input type="text" style="background-color:rgb(228, 86, 3); color: white;" name="descripcion" value="{{registro.4}}">
+              </th><th>
+                <font face=arial style="color:rgb(250, 250, 250); font-size:15px">Proveedor:
+                  <input name="proveedor" style="background-color:rgb(228, 86, 3); color: white;" value="{{registro.5}}">   
+
+                </th>
+              </th></tr>
+          <tr>
+            <th>
+              <font face=arial style="color:rgb(250, 250, 250); font-size:15px">Presentación: 
+                <input name="presentacion" style="background-color:rgb(228, 86, 3); color: white;" value="{{registro.6}}">   
+              </th>
+            <th>
+              <font face=arial style="color:rgb(250, 250, 250); font-size:15px">Stock:
+                <input type="number" style="background-color:rgb(228, 86, 3); color: white;" name="stock" value="{{registro.7}}">
+                </th>
+                <th>
+                  <font face=arial style="color:rgb(250, 250, 250); font-size:15px">Ubicación:
+                    <input type="number" style="background-color:rgb(228, 86, 3); color: white;" name="ubicacion" value="{{registro.8}}">
+                  </th>
+                  <th>
+                    <button type="submit">Actualizar</button> </button>
+                  </body>
+</html>

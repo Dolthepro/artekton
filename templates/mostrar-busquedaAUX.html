@@ -1,0 +1,135 @@
+<HTML>
+    <head>
+      <LINK REL="SHORTCUT ICON" HREF="{{url_for("static", filename='images/Ic.png')}}"></head>
+      <link rel="stylesheet" type="text/css" href="{{url_for("static", filename='css/bootstrap.min.css')}}"></link>
+      <script src="static/js/bootstrap.min.js"></script>
+      <title>Software inventario ARTEKTON</title>
+      <body>
+
+        <style type="text/css">
+          table {
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 12px;
+          background-color: rgba(0, 0, 0, 0.733);
+          box-shadow: 0px 0px 20px rgb(85, 85, 85) inset, 0px 0px 25px rgb(255, 255, 255);
+          }           
+          th, td {
+          border: 5px solid rgba(236, 233, 233, 0);
+          border-radius: 12px;
+          }
+  
+          #navegador ul{
+          list-style-type: none;
+          }
+          #navegador li{
+            border-radius: 12px;
+          display: inline-block;
+          margin: 0 0px 0 0;
+          }
+          body {
+          background-position: center center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-image: url("static/images/Fondo2editado.png");
+          background-color: #cccccc;
+          }
+          #navegador li a {
+            border-radius: 12px;
+          margin: 0 0px 0px 0;
+          display: inline-block;
+          padding: 5px 10px 5px 15px;
+          color: white;
+          background-color: rgb(228, 86, 3);
+          border: 1px solid black;
+          text-decoration: none;
+          font-family: 'Franklin Gothic Medium';
+          }
+          #navegador li a:hover{
+          display: inline-block;
+          background-color: rgb(211, 211, 211);
+          color: rgb(0, 0, 0);  
+          box-shadow: 0px 0px 20px rgb(0, 0, 0) inset, 0px 0px 25px rgb(255, 255, 255)
+          }
+          .alert {
+          padding: 7px 45px 7px 45px;  
+          font-weight: 700;
+          font-size: 13pt; 
+          }
+          input{
+            
+          background: linear-gradient(top, #f9f9f9, #e3e3e3);
+          border: 1px solid #999;
+          border-radius: 3px;
+          outline: none;
+          white-space: nowrap;
+          cursor: pointer;
+          font-size: 10pt;
+          font-family: 'Arial';
+          }
+          </style>
+
+<form action="/buscar" method="POST">
+    <body style="background-color: rgb(0, 0, 0) ; color: #efefef ; ">
+        <h1>FILTRAR</h1>
+        <table align="left" >
+          <tr>
+            <th><div id="navegador">
+              <li> <a href="Inventarioauxiliar"> Atras
+            </a></li> 
+          </th>
+          <th colspan="2" style="text-align:center;">
+            <font face=arial style="color:rgb(250, 250, 250); font-size:15px"> Usuario:&nbsp;{{session['name']}}&nbsp;
+        </th>
+            <th><div id="navegador">
+            <li> <a href="logout">Cerrar sesion
+            </a></li> 
+            </th></tr>
+        </table><br><br><br>
+        <center>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success d-inline-block alert-dismissible fade show" role="alert">
+              {{ message}}
+              <button type="button" style="height:0px;width:0px" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            </center>
+            <table>
+              <tr align="center">
+                <td><font face=arial style="color:rgb(250, 250, 250); font-size:15px">Nº de referencia</td>
+                <td><font face=arial style="color:rgb(250, 250, 250); font-size:15px">Id registro</td>
+                <td><font face=arial style="color:rgb(250, 250, 250); font-size:15px">Nombre de material</td>
+                <td><font face=arial style="color:rgb(250, 250, 250); font-size:15px">Fecha</td>
+                <td><font face=arial style="color:rgb(250, 250, 250); font-size:15px">Descripción</td>
+                <td><font face=arial style="color:rgb(250, 250, 250); font-size:15px">Proveedor</td>
+                <td><font face=arial style="color:rgb(250, 250, 250); font-size:15px">Presentación</td>
+                <td><font face=arial style="color:rgb(250, 250, 250); font-size:15px">Stock</td>
+                <td><font face=arial style="color:rgb(250, 250, 250); font-size:15px">Ubicación</td>   
+            </p></tr>
+            <tbody>
+              {% for registro in registros %}
+              <tr>
+                <th><font face=arial style="color:rgb(240, 240, 240); font-size:15px">{{ registro.0 }}</th>
+                <th><font face=arial style="color:rgb(240, 240, 240); font-size:15px">{{ registro.1 }}</th>
+                <th><font face=arial style="color:rgb(240, 240, 240); font-size:15px">{{ registro.2 }}</th>
+                <th><font face=arial style="color:rgb(240, 240, 240); font-size:15px">{{ registro.3 }}</th>
+                <th><font face=arial style="color:rgb(240, 240, 240); font-size:15px">{{ registro.4 }}</th>
+                <th><font face=arial style="color:rgb(240, 240, 240); font-size:15px">{{ registro.5 }}</th>
+                <th><font face=arial style="color:rgb(240, 240, 240); font-size:15px">{{ registro.6 }}</th>
+                <th><font face=arial style="color:rgb(240, 240, 240)k; font-size:15px">{{ registro.7 }}</th>
+                <th><font face=arial style="color:rgb(240, 240, 240)k; font-size:15px">{{ registro.8 }}</th>
+                <th colspan="2" style="text-align:center;">
+                    <div id="navegador">
+                    <li><a HREF="/editar/{{registro.0}}">Editar
+                    <a HREF="/borrar/{{registro.0}}">Borrar</a></li></div>
+                </th>
+                {% endfor %}
+              </tr>
+              
+        </table><br><br>
